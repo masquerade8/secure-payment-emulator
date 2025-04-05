@@ -71,16 +71,29 @@ https://github.com/user-attachments/assets/5760d346-8486-4bad-a93b-b475db59af6c
 
 ---
 
-## 🔧 Setup Instructions
+## 🛠️ Setup Instructions
 
-1. **Wiring**: Connect MFRC522 and I2C LCD to Arduino Uno.
-2. **Install Libraries**:
-   - `MFRC522` by Miguel Balboa
-   - `LiquidCrystal_I2C`
-3. **Upload Code**:
-   - Modify the list of allowed UIDs and secret keys in the `.ino` file.
-4. **Write Secret Key to Card**:
-   - Use a card writer sketch to store a 4-byte key in block 4.
+1. **Connect the Hardware**  
+   - Arduino Uno  
+   - MFRC522 RFID Reader  
+   - I2C 16x2 LCD Display  
+   - Breadboard, LEDs, Jumper Wires  
+   - Power via USB
+
+2. **Write Key to RFID Card**  
+   Upload the `key_write.ino` sketch to the Arduino.  
+   This will write a secure authentication key to your RFID card.  
+   Place the card on the reader when prompted.
+
+3. **Run the Emulator**  
+   Upload the `emulator.ino` sketch to the Arduino.  
+   This will start the sector-based challenge-response authentication system.  
+   Scan the RFID card to see access granted or denied based on key match.
+
+4. **Verify Output**  
+   - LCD will display: `Scan Card`, `Access Granted`, or `Invalid Card` based on authentication.  
+   - Use the attached images and video demo for visual reference.
+
 
 ---
 
